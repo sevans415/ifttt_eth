@@ -1,8 +1,12 @@
 pragma solidity ^0.4.8;
 
 contract ifttt{ 
+    address public agent2;
     string clause1 = "replacement1";
     string clause2 = "replacement2";
+    bool clause1completed = false;
+
+    mapping (address => uint) public balances;
 
     event Sent(address from, address to, uint amount);
     
@@ -10,8 +14,8 @@ contract ifttt{
         agent2 = agent2;
     }
     
-    function action(amt) {    
-        if (clause1) {
+    function action(uint256 amt) {    
+        if (clause1completed) {
             send(agent2, amt); 
         }
     }

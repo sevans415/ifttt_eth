@@ -1,6 +1,6 @@
 var ConvertLib = artifacts.require("./ConvertLib.sol");
 var MetaCoin = artifacts.require("./MetaCoin.sol");
-var ifttt = artifacts.require("./Ifttt.sol")
+var Ifttt = artifacts.require("./Ifttt.sol")
 
 module.exports = function(deployer) {
   deployer.deploy(ConvertLib);
