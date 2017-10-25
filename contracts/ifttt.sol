@@ -1,23 +1,25 @@
-pragma solidity ^0.4.4;
+pragma solidity ^0.4.8;
 
-contract iftt {
-  address public agent1;
-  address public agent2;
-  string clause1;
-  string clause2;
-  
-  function iftt(address agent2, string clause1, string clause2) {
-    agent1 = msg.sender;
-    agent2 = agent2;
-    clause1 = clause1;
-    clause2 = clause2;
-  }
+contract ifttt{ 
+    string clause1 = "replacement1";
+    string clause2 = "replacement2";
 
-  function contractEnd() {
+    event Sent(address from, address to, uint amount);
+    
+    function ifttt(address agent2, string clause1, string clause2) {
+        agent2 = agent2;
+    }
+    
+    function action(amt) {    
+        if (clause1) {
+            send(agent2, amt); 
+        }
+    }
 
-  }
-
-  
-
-
+    function send(address receiver, uint amount) {
+        if (balances[msg.sender] < amount) return;
+        balances[msg.sender] -= amount;
+        balances[receiver] += amount;
+        Sent(msg.sender, receiver, amount);
+    }
 }

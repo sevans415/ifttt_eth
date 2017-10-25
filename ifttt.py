@@ -11,7 +11,8 @@ def startup():
     print ("Your smart contracts states that if " + ifClause + " then " + thenClause)
     if  raw_input("Is this correct? [y/n]") == 'n':
         print ("Unlucky")
-    #editing of the solidity text shoudl happen here
+
+    make_contract(ifClause, thenClause);
     print ("Your contract has been pushed to the chain. HYPE.")
     return
 
@@ -21,6 +22,10 @@ def proStartup(ifClause, thenClause):
     #editing of the solidity text shoudl happen here
     print ("Your contract has been pushed to the chain. HYPE.")
     return
+
+def make_contract(ifClause, thenClause):
+
+
 
 if __name__ == "__main__":
     if len(sys.argv) == 3:
