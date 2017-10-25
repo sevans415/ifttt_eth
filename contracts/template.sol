@@ -1,8 +1,8 @@
 pragma solidity ^0.4.8;
 
 contract ifttt{ 
-    string clause1 = "spotify";
-    string clause2 = "hue";
+    string clause1 = "replacement1";
+    string clause2 = "replacement2";
 
     event Sent(address from, address to, uint amount);
     
