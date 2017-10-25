@@ -1,18 +1,18 @@
 pragma solidity ^0.4.8;
 
-contract ifttt{ 
+contract ifttt{
     string clause1 = "spotify";
     string clause2 = "hue";
 
     event Sent(address from, address to, uint amount);
-    
+
     function ifttt(address agent2, string clause1, string clause2) {
         agent2 = agent2;
     }
-    
-    function action(amt) {    
-        if (clause1) {
-            send(agent2, amt); 
+
+    function action(uint256 amt) {
+        if (clause1completed) {
+            send(agent2, amt);
         }
     }
 
